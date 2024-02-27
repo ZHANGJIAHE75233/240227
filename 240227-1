@@ -1,0 +1,32 @@
+
+x = [0.2,0.4,0.5,0.8,1.0];
+y = [13.75,9.6,12.5,9.9,8.5];
+z = [26.6,47.8,55.6,65.8,57.9];
+a = z-y ;
+
+xi = 0:0.02:1;
+
+
+ai = interp1(x, a, xi, 'spline');
+
+
+plot(x, a, 'o', xi, ai, '-')
+legend('Original point', 'Interpolation curve');
+
+xlabel('DFA/CE');
+zlabel('Relative benefit γ')
+
+
+max=max(ai)
+min=min(ai)
+
+x = [0.2,0.4,0.5,0.8,1.0];
+y = [15.23,15.76,17.305,19.075,20.935];
+xi=0:0.02:1;
+yi=interp1(x,y,xi,'spline');
+plot(x,y,'o',xi,yi,'-');
+legend('Original point','Interpolation curve');
+xlabel('DFA/LG');
+ylabel('Yield of CO');
+max=max(xi);
+min=min(yi)
